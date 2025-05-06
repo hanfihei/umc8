@@ -27,7 +27,7 @@ public class UserMission extends BaseEntity {
     private LocalDateTime completedDate;  // 미션 완료 날짜
 
     @ManyToOne
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne

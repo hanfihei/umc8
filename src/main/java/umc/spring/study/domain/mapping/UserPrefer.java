@@ -20,6 +20,6 @@ public class UserPrefer extends BaseEntity {
     private String preferName; // 선호하는 음식/카테고리 이름
 
     @ManyToOne
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "user_id")
     private User user;
 }

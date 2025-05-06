@@ -5,6 +5,9 @@ import lombok.*;
 import umc.spring.study.domain.User;
 import umc.spring.study.domain.common.BaseEntity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Builder
@@ -20,6 +23,7 @@ public class UserAgree extends BaseEntity {
     private String agreementType;  // 약관 종류 (예: 개인정보, 서비스이용약관 등)
 
     @ManyToOne
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "user_id")
     private User user;
+
 }

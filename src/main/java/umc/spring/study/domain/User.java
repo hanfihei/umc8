@@ -51,10 +51,10 @@ public class User extends BaseEntity {
 
     private LocalDate inactiveDate;
 
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
-    private List<UserAgree> userAgreeList = new ArrayList<>();
+    @OneToMany(mappedBy = "user")
+    private List<UserAgree> userAgreeList;
 
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<UserPrefer> userPreferList = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
