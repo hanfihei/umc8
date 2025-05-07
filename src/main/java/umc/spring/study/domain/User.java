@@ -18,6 +18,7 @@ import java.util.List;
 
 @Entity
 @Getter
+@Setter
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -29,6 +30,9 @@ public class User extends BaseEntity {
 
     @Column(nullable = false, length = 20)
     private String name;
+
+    @Column(nullable = false, length = 50)
+    private String phoneNumber;
 
     @Column(nullable = false, length = 100)
     private String address;

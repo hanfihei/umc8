@@ -56,7 +56,7 @@ public class QRegionMission extends EntityPathBase<RegionMission> {
 
     public QRegionMission(Class<? extends RegionMission> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.mission = inits.isInitialized("mission") ? new QMission(forProperty("mission")) : null;
+        this.mission = inits.isInitialized("mission") ? new QMission(forProperty("mission"), inits.get("mission")) : null;
         this.region = inits.isInitialized("region") ? new QRegion(forProperty("region")) : null;
     }
 
