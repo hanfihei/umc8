@@ -26,12 +26,12 @@ public class Store extends BaseEntity {
     private String address;
 
     @Column(nullable = false)
-    private Integer star;
+    private float star;
 
     @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
     private List<Review> reviewList = new ArrayList<>();
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne//fetch = FetchType.LAZY)
     @JoinColumn(name = "region_id")
     private Region region;
 
@@ -42,7 +42,7 @@ public class Store extends BaseEntity {
                 ", name='" + storeName + '\'' +
                 ", address='" + address + '\'' +
                 ", score=" + star +
-                ", region=" + (region != null ? region.getName() : "N/A") + // region의 이름 출력
+                ", region=" + (region != null ? region.getName() : "N/A") +
                 '}';
     }
 

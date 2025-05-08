@@ -35,7 +35,7 @@ public class QStore extends EntityPathBase<Store> {
 
     public final ListPath<Review, QReview> reviewList = this.<Review, QReview>createList("reviewList", Review.class, QReview.class, PathInits.DIRECT2);
 
-    public final NumberPath<Integer> star = createNumber("star", Integer.class);
+    public final NumberPath<Float> star = createNumber("star", Float.class);
 
     public final StringPath storeName = createString("storeName");
 

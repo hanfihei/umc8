@@ -24,7 +24,7 @@ public class StoreRepositoryImpl implements StoreRepositoryCustom{
         }
 
         if (score != null) {
-            predicate.and(store.star.goe(4.0f));
+            predicate.and(store.star.goe(score));
         }
 
         return jpaQueryFactory

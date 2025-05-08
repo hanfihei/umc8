@@ -52,7 +52,7 @@ public class QUser extends EntityPathBase<User> {
 
     public final ListPath<umc.spring.study.domain.mapping.UserPrefer, umc.spring.study.domain.mapping.QUserPrefer> userPreferList = this.<umc.spring.study.domain.mapping.UserPrefer, umc.spring.study.domain.mapping.QUserPrefer>createList("userPreferList", umc.spring.study.domain.mapping.UserPrefer.class, umc.spring.study.domain.mapping.QUserPrefer.class, PathInits.DIRECT2);
 
-    public final EnumPath<umc.spring.study.domain.enums.UserStatus> userstatus = createEnum("userstatus", umc.spring.study.domain.enums.UserStatus.class);
+    public final EnumPath<umc.spring.study.domain.enums.UserStatus> userStatus = createEnum("userStatus", umc.spring.study.domain.enums.UserStatus.class);
 
     public QUser(String variable) {
         super(User.class, forVariable(variable));

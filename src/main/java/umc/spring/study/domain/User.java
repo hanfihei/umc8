@@ -22,6 +22,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
+
 public class User extends BaseEntity {
 
     @Id
@@ -51,7 +52,7 @@ public class User extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(columnDefinition = "VARCHAR(15) DEFAULT 'ACTIVE'")
-    private UserStatus userstatus;
+    private UserStatus userStatus;
 
     private LocalDate inactiveDate;
 
