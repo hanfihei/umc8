@@ -6,7 +6,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import umc.spring.study.domain.QUser;
 import umc.spring.study.domain.User;
+import umc.spring.study.web.dto.MyPageDTO;
 
+import static com.querydsl.core.types.Projections.constructor;
+import lombok.AllArgsConstructor;
 
 @Repository
 @RequiredArgsConstructor
@@ -16,7 +19,7 @@ public class UserRepositoryImpl implements UserRepositoryCustom {
     private final QUser user = QUser.user;  // 직접 할당
 
     @Override
-    public User getMyPage(Long userId) {
+    public MyPageDTO getMyPage(Long userId) {
         BooleanBuilder predicate = new BooleanBuilder();
 
         if (userId != null) {
@@ -24,8 +27,16 @@ public class UserRepositoryImpl implements UserRepositoryCustom {
         }
 
         return jpaQueryFactory
-                .selectFrom(user)
+                .select(constructor(MyPageDTO.class,
+                        user.id,
+                        user.name,
+                        user.email,
+                        user.phoneNumber,
+                        user.point
+                ))
+                .from(user)
                 .where(predicate)
                 .fetchOne();
     }
-}
+    }
+

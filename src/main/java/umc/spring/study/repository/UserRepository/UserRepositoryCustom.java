@@ -1,7 +1,10 @@
 package umc.spring.study.repository.UserRepository;
 
 import umc.spring.study.domain.User;
+import umc.spring.study.web.dto.MyPageDTO;
 
 public interface UserRepositoryCustom {
-    User getMyPage(Long userId);
+    MyPageDTO getMyPage(Long userId);
+
+
 }
