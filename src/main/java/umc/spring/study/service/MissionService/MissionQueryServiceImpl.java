@@ -15,8 +15,8 @@ public class MissionQueryServiceImpl implements MissionQueryService {
     private final MissionRepository missionRepository;
 
     @Override
-    public List<Mission> findMissionByMissionStatus(Long memberId, Long cursor, String status) {
-        List<Mission> missions = missionRepository.findMissionByMissionStatus(memberId, cursor, status);
+    public List<Mission> findMissionByMissionStatus(Long userId, Long cursor, String status) {
+        List<Mission> missions = missionRepository.findMissionByMissionStatus(userId, cursor, status);
 
         missions.forEach(mission ->
                 System.out.println("미션: " + mission.getId() + ", 포인트: " + mission.getPoint()));

@@ -27,9 +27,9 @@ public class QUserPrefer extends EntityPathBase<UserPrefer> {
     //inherited
     public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
 
-    public final NumberPath<Long> id = createNumber("id", Long.class);
+    public final umc.spring.study.domain.QFoodCategory foodCategory;
 
-    public final StringPath preferName = createString("preferName");
+    public final NumberPath<Long> id = createNumber("id", Long.class);
 
     //inherited
     public final DateTimePath<java.time.LocalDateTime> updatedAt = _super.updatedAt;
@@ -54,6 +54,7 @@ public class QUserPrefer extends EntityPathBase<UserPrefer> {
 
     public QUserPrefer(Class<? extends UserPrefer> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
+        this.foodCategory = inits.isInitialized("foodCategory") ? new umc.spring.study.domain.QFoodCategory(forProperty("foodCategory")) : null;
         this.user = inits.isInitialized("user") ? new umc.spring.study.domain.QUser(forProperty("user")) : null;
     }
 

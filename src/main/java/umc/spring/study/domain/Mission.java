@@ -6,6 +6,7 @@ import umc.spring.study.domain.common.BaseEntity;
 import umc.spring.study.domain.enums.MissionStatusType;
 import umc.spring.study.domain.mapping.UserMission;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,15 +20,21 @@ public class Mission extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "mission_id")
     private Long id;
+
+    @Column(nullable = false)
+    private String text;
+
+    private String name;
 
     private Integer point;
 
-    @Column(columnDefinition = "TEXT")
-    private String text;
+    private LocalDate completionDate;
 
     @Enumerated(EnumType.STRING)
     private MissionStatusType status;
+
 
     @ManyToOne
     @JoinColumn(name = "store_id")

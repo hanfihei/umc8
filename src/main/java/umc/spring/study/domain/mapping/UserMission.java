@@ -31,6 +31,8 @@ public class UserMission extends BaseEntity {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "mission_id")
+    @JoinColumn(name = "mission_id",nullable = false)
     private Mission mission;
+
+
 }

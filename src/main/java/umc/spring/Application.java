@@ -26,15 +26,14 @@ public class Application {
 
 
 			String name = "요아정";
-			Float score = 4.0f;
-
+			Double star = 4.0;
 
 			System.out.println("Executing findStoresByNameAndScore with parameters:");
 			System.out.println("Name: " + name);
-			System.out.println("Score: " + score);
+			System.out.println("Score: " + star);
 
-			storeService.findStoresByNameAndScore(name, score)
-					.forEach(System.out::println);
+			//storeService.findStoresByNameAndScore(name, star)
+			//		.forEach(System.out::println);
 
 		};
 	}}

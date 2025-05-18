@@ -2,7 +2,6 @@ package umc.spring.study.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
-import umc.spring.study.domain.Review;
 import umc.spring.study.domain.common.BaseEntity;
 
 import java.util.ArrayList;
@@ -18,7 +17,7 @@ public class Store extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long storeId;
 
     @Column(nullable = false, length = 100)
     private String storeName;
@@ -26,7 +25,7 @@ public class Store extends BaseEntity {
     private String address;
 
     @Column(nullable = false)
-    private float star;
+    private double star;
 
     @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
     private List<Review> reviewList = new ArrayList<>();
@@ -35,10 +34,16 @@ public class Store extends BaseEntity {
     @JoinColumn(name = "region_id")
     private Region region;
 
+//    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
+ //   private List<Review> review = new ArrayList<>();
+
+    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
+    private List<Mission> missionList = new ArrayList<>();
+
     @Override
     public String toString() {
         return "Store{" +
-                "id=" + id +
+                "storeId=" + storeId +
                 ", name='" + storeName + '\'' +
                 ", address='" + address + '\'' +
                 ", score=" + star +

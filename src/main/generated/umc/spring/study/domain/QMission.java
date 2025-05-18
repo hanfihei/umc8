@@ -24,10 +24,14 @@ public class QMission extends EntityPathBase<Mission> {
 
     public final umc.spring.study.domain.common.QBaseEntity _super = new umc.spring.study.domain.common.QBaseEntity(this);
 
+    public final DatePath<java.time.LocalDate> completionDate = createDate("completionDate", java.time.LocalDate.class);
+
     //inherited
     public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
+
+    public final StringPath name = createString("name");
 
     public final NumberPath<Integer> point = createNumber("point", Integer.class);
 
