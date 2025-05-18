@@ -26,7 +26,7 @@ public class CategoriesExistValidator implements ConstraintValidator<ExistCatego
             return false;
         }
 
-        boolean isValid = foodCategoryService.doAllCategoriesExist(values); //서비스 계층에 위임
+            boolean isValid = foodCategoryService.doAllCategoriesExist(values); //서비스 계층에 위임
 
         if (!isValid) {
             context.disableDefaultConstraintViolation();
