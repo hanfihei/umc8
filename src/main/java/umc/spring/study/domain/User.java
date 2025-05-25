@@ -3,6 +3,9 @@ package umc.spring.study.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import umc.spring.study.domain.common.BaseEntity;
 import umc.spring.study.domain.enums.Gender;
 import umc.spring.study.domain.enums.SocialType;
@@ -22,7 +25,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-
+@Table(name = "`user`")
 public class User extends BaseEntity {
 
     @Id
@@ -35,15 +38,25 @@ public class User extends BaseEntity {
     @Column(nullable = false, length = 50)
     private String phoneNumber;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 50)
+    private String email;
+
+    //@Column(nullable = false, length = 100)
     private String address;
+
+    //@Column(nullable = false, length = 100)
+    private String specAddress;
 
     @Enumerated(EnumType.STRING)
     @Column(columnDefinition = "VARCHAR(10)")
     private Gender gender;
 
-    @Column(nullable = false)
+    @ColumnDefault("0")
     private Integer point;
+
+    @Enumerated(EnumType.STRING)
+    //@Column(columnDefinition = "INACTIVE")
+    private UserStatus status;
 
 
     @Enumerated(EnumType.STRING)

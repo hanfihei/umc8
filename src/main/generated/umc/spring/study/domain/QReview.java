@@ -31,7 +31,7 @@ public class QReview extends EntityPathBase<Review> {
 
     public final StringPath image = createString("image");
 
-    public final NumberPath<Float> star = createNumber("star", Float.class);
+    public final NumberPath<Double> star = createNumber("star", Double.class);
 
     public final QStore store;
 

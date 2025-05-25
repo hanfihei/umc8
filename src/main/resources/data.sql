@@ -1,24 +1,26 @@
-INSERT INTO region (id, region_name, created_at, updated_at)
-VALUES (1, '서울', NOW(), NOW()),
-       (2, '부산', NOW(), NOW()),
-       (3, '인천', NOW(), NOW());
+insert into Region VALUES (3, '2020-11-11', '2020-10-10', '지역이름' );
+insert into store VALUES(2, '2020-12-20', '2020-10-10', '집', 5, '가게이름', 10);
 
-INSERT INTO store (id, store_name, address, star, region_id, created_at, updated_at)
-VALUES (1, 'Store 1', '서울시 서대문구 이화여대길 52', 4.5, 1, NOW(), NOW()),
-       (2, 'Store 2', '서울시 마포구 연남동', 3.8, 1, NOW(), NOW()),
-       (3, 'Store 3', '서울시 동작구 흑석동', 2.2, 1, NOW(), NOW()),
-       (4, '요아정', '서울시 용산구 이태원동', 4.0, 1, NOW(), NOW()),
-       (5, '요아정', '서울시 서대문구 이화여대길 52', 3.2, 1, NOW(), NOW()),
-       (6, '요아정', '서울시 강남구 대치동', 4.5, 1, NOW(), NOW());
+insert into review VALUES (11,'1111-11-11', '2222-12-11', 'ddd', 5, 'dddddddd', 1, 10);
 
-INSERT INTO mission (id, status, store_id, created_at, updated_at)
-VALUES (1, 'Store 1-미션 1', 1, NOW(), NOW()),
-       (2, 'Store 1-미션 2', 1, NOW(), NOW()),
-       (3, 'Store 2-미션 1', 2, NOW(), NOW()),
-       (4, 'Store 3-미션 1', 3, NOW(), NOW());
+INSERT INTO mission (
+    id,
+    name,
+    point,
+    text,
+    status,
+    store_id,
+    created_at,
+    updated_at
+) VALUES (
+             1,
+             '미션 이름',
+             100,
+             '미션 설명입니다.',
+             'ONGOING',
+             1,
+             NOW(),
+             NOW()
+         );
 
-INSERT INTO review (id, text, star, store_id, created_at, updated_at)
-VALUES (1, '너무 좋아요!', 5.0, 1, NOW(), NOW()),
-       (2, '분위기 짱~', 3.0, 1, NOW(), NOW()),
-       (3, '서비스가 좋습니다', 4.8, 2, NOW(), NOW()),
-       (4, '음식이 맛있고 사장님이 친절해요', 4.5, 3, NOW(), NOW());
+insert into mission VALUES (5, '2001-01-01', '2020-12-12', '2020-12-12', '미션이름', 5,'ONGOING','미션내용',1);
